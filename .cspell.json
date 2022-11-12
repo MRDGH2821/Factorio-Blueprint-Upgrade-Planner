@@ -14,7 +14,10 @@
   "words": [
     "Factorio",
     "megalinter",
-    "oxsecurity"
+    "oxsecurity",
+    "Parens",
+    "specialchars",
+    "tagname"
   ],
   "version": "0.2"
 }
