@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-<title>Factorio Blueprint Upgrade Planner</title>
-    </head>
+
+<head>
+    <title>Factorio Blueprint Upgrade Planner</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Plan your upgrades in a config, upload them in site, Profit!">
+    <meta name="keywords" content="Factorio, Blueprints, Upgrade, Planner">
+</head>
+
+<body background="#2e5e75">
+    <h1 align="center">Factorio Blueprint Upgrade Planner</h1>
+    <br>
+    <div align="center">
+        <form>
+            <label for="raw-bp">Raw blueprint string:</label>
+            <input id="raw-bp" name="raw-bp" type="text"><br>
+            <label for="raw-bp-file">Raw blueprint file:</label>
+            <input id="raw-bp-file" name="raw-bp-file" type="file">
+            <br><br>
+            <label for="config-json">Config in JSON format:</label>
+            <input id="config-json" name="config-json" type="text"><br>
+            <label for="config-json-file">Raw blueprint file:</label>
+            <input id="config-json-file" name="config-json-file" type="file">
+            <br><br>
+            <button id="submit" name="submit" type="submit">Upgrade the Blueprint!</button>
+        </form>
+    </div>
+</body>
+
 </html>
