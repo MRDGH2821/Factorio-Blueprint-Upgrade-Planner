@@ -6,13 +6,14 @@
     <meta charset="UTF-8">
     <meta name="description" content="Plan your upgrades in a config, upload them in site, Profit!">
     <meta name="keywords" content="Factorio, Blueprints, Upgrade, Planner">
+    <script src="script/main.js" type="module"></script>
 </head>
 
 <body background="#2e5e75">
     <h1 align="center">Factorio Blueprint Upgrade Planner</h1>
     <br>
     <div align="center">
-        <form>
+        <form id="factorio-form" name="factorio-form">
             <label for="raw-bp">Raw blueprint string:</label>
             <input id="raw-bp" name="raw-bp" type="text"><br>
             <label for="raw-bp-file">Raw blueprint file:</label>
@@ -23,8 +24,11 @@
             <label for="config-json-file">Raw blueprint file:</label>
             <input id="config-json-file" name="config-json-file" type="file">
             <br><br>
-            <button id="submit" name="submit" type="submit">Upgrade the Blueprint!</button>
+            <button id="submit" name="submit" type="submit" onclick="javascript:decode()">Upgrade the Blueprint!</button>
         </form>
+    </div>
+    <div align="center">
+        <br><br>After clicking on the button, a txt file will be downloaded.
     </div>
 </body>
 
