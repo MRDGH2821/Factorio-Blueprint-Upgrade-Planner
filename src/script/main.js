@@ -1,4 +1,4 @@
-// import * as pako from "https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js";
+import * as pako from "https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js";
 
 const inputForm = document.getElementById("factorio-form");
 const bpForm = new FormData(inputForm);
@@ -29,12 +29,20 @@ inputForm.addEventListener("submit", (e) => {
   if (inputBPStr.value === "" || inputBPStr.value === null) {
     console.log("no bp found");
     messages.push("blueprint");
+  } else {
+    const base64str = inputBPStr.value.slice(1);
+    const zlibDeflatedStr = atob(base64str);
+    const bpJSON = pako.inflate(zlibDeflatedStr);
+    console.log(bpJSON);
   }
 
   if (inputConfigStr.value === "" || inputConfigStr.value === null) {
     console.log("no config found");
     messages.push("config");
+  } else {
+    console.log("config", inputConfigStr.value);
   }
+
   if (messages.length > 0) {
     errorElement.innerText = "Please supply " + messages.join(" & ");
   }
