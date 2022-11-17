@@ -6,8 +6,8 @@ const bpForm = new FormData(inputForm);
 const inputBPStr = document.getElementById("raw-bp");
 const inputConfigStr = document.getElementById("config-json");
 
-const inputBPFile = document.getElementById("raw-bp-file");
-const inputConfigFile = document.getElementById("config-json-file");
+// const inputBPFile = document.getElementById("raw-bp-file");
+// const inputConfigFile = document.getElementById("config-json-file");
 
 const errorElement = document.getElementById("errors");
 
@@ -24,14 +24,14 @@ function decode() {
 }
 
 inputForm.addEventListener("submit", (e) => {
-  console.log({ inputForm, bpForm, inputBPFile, inputConfigFile });
+  console.log({ inputForm, bpForm });
   const messages = [];
-  if (inputBPStr.value === "" || inputBPStr.value === null || !!inputBPFile.files[0]) {
+  if (inputBPStr.value === "" || inputBPStr.value === null) {
     console.log("no bp found");
     messages.push("blueprint");
   }
 
-  if (inputConfigStr.value === "" || inputConfigStr.value === null || !!inputConfigFile.files[0]) {
+  if (inputConfigStr.value === "" || inputConfigStr.value === null) {
     console.log("no config found");
     messages.push("config");
   }
