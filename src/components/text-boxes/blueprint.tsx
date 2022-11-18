@@ -29,6 +29,7 @@ export const BlueprintInput = component$(() => {
       <textarea
         cols={50}
         rows={10}
+        preventdefault:input
         onInput$={(input) => {
           bpStrStore.encodedInput = (input.target as HTMLTextAreaElement).value;
         }}
