@@ -6,9 +6,7 @@ import { BlueprintInput } from '../components/text-boxes/blueprint';
 export default component$(() => {
   return (
     <div>
-      <h1>
-        Welcome to Qwik <span class="lightning">⚡️</span>
-      </h1>
+      <h1>Welcome to Factorio Blueprint Upgrade Planner!</h1>
       <BlueprintInput />
      
       <ul>
