@@ -43,11 +43,17 @@ export const BlueprintInput = component$(() => {
 export const BlueprintDecrypted = component$(() => {
   const bpCtx = useContext<BlueprintInputStore>(BPContext);
   const bpBase64Str = bpCtx.encodedInput.slice(1);
-  const bpZlibDeflateStr = atob(bpBase64Str);
-  bpCtx.decodedInput = inflate(
-    Uint8Array.from(bpZlibDeflateStr, (c) => c.charCodeAt(0)),
-    { to: 'string' },
-  );
+  try {
+    const bpZlibDeflateStr = atob(bpBase64Str);
+    bpCtx.decodedInput = inflate(
+      Uint8Array.from(bpZlibDeflateStr, (c) => c.charCodeAt(0)),
+      { to: 'string' },
+    );
+  } catch (error) {
+    bpCtx.decodedInput = `${
+      error || 'An error ocurred while decrypting. Most likely it is not a base64 encoded string.'
+    }`;
+  }
 
   return (
     <>
