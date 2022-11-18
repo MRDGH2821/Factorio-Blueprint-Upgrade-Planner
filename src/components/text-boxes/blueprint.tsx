@@ -4,9 +4,10 @@ import {
   useContext,
   useContextProvider,
   useStore,
+  useStylesScoped$,
 } from '@builder.io/qwik';
 import { inflate } from 'pako';
-
+import bpStyles from './text_box.css?inline';
 export interface BlueprintInputStore {
   encodedInput: string;
   decodedInput: string;
@@ -15,6 +16,7 @@ export interface BlueprintInputStore {
 export const BPContext = createContext<BlueprintInputStore>('bp-input-context');
 
 export const BlueprintInput = component$(() => {
+  useStylesScoped$(bpStyles);
   const bpStrStore = useStore<BlueprintInputStore>({
     encodedInput: '',
     decodedInput: '',
@@ -41,6 +43,7 @@ export const BlueprintInput = component$(() => {
 });
 
 export const BlueprintDecrypted = component$(() => {
+  useStylesScoped$(bpStyles);
   const bpCtx = useContext<BlueprintInputStore>(BPContext);
   const bpBase64Str = bpCtx.encodedInput.slice(1);
   try {
