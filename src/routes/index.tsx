@@ -1,6 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import { Link } from '@builder.io/qwik-city';
+import manifest from '../../public/manifest.json';
+import { BlueprintInput } from '../components/text-boxes/blueprint';
 
 export default component$(() => {
   return (
@@ -8,7 +9,8 @@ export default component$(() => {
       <h1>
         Welcome to Qwik <span class="lightning">⚡️</span>
       </h1>
-
+      <BlueprintInput />
+     
       <ul>
         <li>
           Check out the <code>src/routes</code> directory to get started.
@@ -90,8 +92,7 @@ export default component$(() => {
           <td>
             <a
               href="https://qwik.builder.io/qwikcity/static-site-generation/overview/"
-              target="_blank"
-            >
+              target="_blank">
               Static Site Generation (SSG)
             </a>
           </td>
@@ -127,19 +128,16 @@ export default component$(() => {
           </a>
         </li>
       </ul>
-      <Link class="mindblow" href="/flower">
-        Blow my mind 🤯
-      </Link>
     </div>
   );
 });
 
 export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
+  title: manifest.short_name,
   meta: [
     {
-      name: 'description',
-      content: 'Qwik site description',
+      name: manifest.name,
+      content: manifest.description,
     },
   ],
 };
