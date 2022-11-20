@@ -62,7 +62,7 @@ export const BlueprintDecrypted = component$(() => {
     <>
       <span>Decrypted Blueprint</span>
       <br></br>
-      <textarea cols={50} rows={10} value={bpCtx.decodedInput} />
+      <textarea preventdefault:input cols={50} rows={10} value={bpCtx.decodedInput} />
     </>
   );
 });
