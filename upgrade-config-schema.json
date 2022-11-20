@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "integer"
+    },
+    "entities": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "old": {
+              "type": "string"
+            },
+            "new": {
+              "type": "string"
+            }
+          },
+          "required": ["old", "new"]
+        }
+      ]
+    }
+  },
+  "required": ["version", "entities"]
+}

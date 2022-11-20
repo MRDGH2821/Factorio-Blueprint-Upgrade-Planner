@@ -1,0 +1,38 @@
+{
+  "$schema": "../../../upgrade-config-schema.json",
+  "version": 1,
+  "entities": [
+    {
+      "old": "straight-rail",
+      "new": "se-space-straight-rail"
+    },
+    {
+      "old": "curved-rail",
+      "new": "se-space-curved-rail"
+    },
+    {
+      "old": "assembling-machine-[1-9]",
+      "new": "se-space-assembling-machine"
+    },
+    {
+      "old": "(?:[a-z]+-)?transport-belt",
+      "new": "se-space-transport-belt"
+    },
+    {
+      "old": "(?:[a-z]+-)?underground-belt",
+      "new": "se-space-underground-belt"
+    },
+    {
+      "old": "(?:[a-z]+-)?splitter",
+      "new": "se-space-splitter"
+    },
+    {
+      "old": "pipe",
+      "new": "se-space-pipe"
+    },
+    {
+      "old": "pipe-to-ground",
+      "new": "se-space-pipe-to-ground"
+    }
+  ]
+}
