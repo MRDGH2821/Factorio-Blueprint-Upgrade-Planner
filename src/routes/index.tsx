@@ -2,12 +2,14 @@ import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import manifest from '../../public/manifest.json';
 import { BlueprintInput } from '../components/text-boxes/blueprint';
+import { ConfigInput } from '../components/text-boxes/config';
 
 export default component$(() => {
   return (
     <div>
       <h1>Welcome to Factorio Blueprint Upgrade Planner!</h1>
       <BlueprintInput />
+      <ConfigInput />
     </div>
   );
 });
