@@ -5,8 +5,8 @@ APPLY_FIXES: all # all, none, or list of linter keys
 # ENABLE: # If you use ENABLE variable, all other languages/formats/tooling-formats will be disabled by default
 # ENABLE_LINTERS: # If you use ENABLE_LINTERS variable, all other linters will be disabled by default
 # DISABLE:
-  # - COPYPASTE # Uncomment to disable checks of excessive copy-pastes
-  # - SPELL # Uncomment to disable checks of spelling mistakes
+# - COPYPASTE # Uncomment to disable checks of excessive copy-pastes
+# - SPELL # Uncomment to disable checks of spelling mistakes
 DISABLE_LINTERS:
   - JAVASCRIPT_STANDARD
   - TYPESCRIPT_STANDARD
@@ -18,6 +18,9 @@ TYPESCRIPT_DEFAULT_STYLE: prettier
 LINTER_RULES_PATH: .
 PRINT_ALPACA: false
 IGNORE_GITIGNORED_FILES: true
+
+PRE_COMMANDS:
+  - command: 'npm install'
 
 # Excludes cspell file itself
 SPELL_MISSPELL_FILTER_REGEX_EXCLUDE: cspell.
