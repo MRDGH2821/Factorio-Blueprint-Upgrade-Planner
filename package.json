@@ -25,6 +25,7 @@
     "@builder.io/qwik": "0.13.3",
     "@builder.io/qwik-city": "0.0.122",
     "@types/eslint": "8.4.9",
+    "@types/file-saver": "^2.0.5",
     "@types/node": "latest",
     "@types/pako": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "5.42.0",
@@ -40,6 +41,7 @@
     "vite-tsconfig-paths": "3.5.0"
   },
   "dependencies": {
+    "file-saver": "^2.0.5",
     "pako": "^2.1.0"
   }
 }
