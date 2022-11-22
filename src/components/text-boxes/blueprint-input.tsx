@@ -1,4 +1,5 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import { base64ToBytes } from 'byte-base64';
 import { inflate } from 'pako';
 import { BlueprintInputStore } from '../ts-interfaces/blueprint';
 import textBoxStyles from './text_box.css?inline';
@@ -31,6 +32,7 @@ export default component$((props: BPprops) => {
         cols={50}
         rows={10}
         preventdefault:input
+        required={true}
         onInput$={(input) => {
           bpStrStore.encodedInput = (input.target as HTMLTextAreaElement).value;
           BlueprintDecrypt(bpStrStore);
