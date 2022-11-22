@@ -1,10 +1,9 @@
 import { component$, useContext } from '@builder.io/qwik';
 import { saveAs } from 'file-saver';
 import { deflate } from 'pako';
+import { BPContext, configContext } from '../../routes/stores';
 import { BlueprintInputStore } from '../ts-interfaces/blueprint';
 import { BluePrintConfig, ConfigInputStore } from '../ts-interfaces/config';
-import { BPContext } from './blueprint-input';
-import { configContext } from './config-input';
 
 export default component$(() => {
   const bpCtx = useContext(BPContext);
@@ -12,6 +11,7 @@ export default component$(() => {
   return (
     <>
       <button
+        preventdefault:input
         preventdefault:click
         onClick$={() => {
           const bp = generateFile(cfgCtx, bpCtx);

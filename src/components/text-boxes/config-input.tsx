@@ -1,24 +1,16 @@
-import {
-  component$,
-  createContext,
-  useContextProvider,
-  useStore,
-  useStylesScoped$,
-} from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import defaultCfg from '../../../public/default-config.json';
 import { ConfigInputStore } from '../ts-interfaces/config';
-import defaultCfg from './default-config.json';
 import textBoxStyles from './text_box.css?inline';
 
-export const configContext = createContext<ConfigInputStore>('config-input-context');
+interface CFGprop {
+  cfgStore: ConfigInputStore;
+}
 
-export default component$(() => {
+export default component$((props: CFGprop) => {
   useStylesScoped$(textBoxStyles);
 
-  const cfgStore = useStore<ConfigInputStore>({
-    config: '',
-  });
-
-  useContextProvider(configContext, cfgStore);
+  const { cfgStore } = props;
 
   return (
     <>

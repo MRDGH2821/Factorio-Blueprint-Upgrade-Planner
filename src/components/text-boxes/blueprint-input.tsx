@@ -1,15 +1,7 @@
-import {
-  component$,
-  createContext,
-  useContextProvider,
-  useStore,
-  useStylesScoped$,
-} from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import { inflate } from 'pako';
 import { BlueprintInputStore } from '../ts-interfaces/blueprint';
 import textBoxStyles from './text_box.css?inline';
-
-export const BPContext = createContext<BlueprintInputStore>('bp-input-context');
 
 export function BlueprintDecrypt(bpCtx: BlueprintInputStore) {
   const bpBase64Str = bpCtx.encodedInput.slice(1);
@@ -26,16 +18,14 @@ export function BlueprintDecrypt(bpCtx: BlueprintInputStore) {
   }
 }
 
-export default component$(() => {
+interface BPprops {
+  bpStrStore: BlueprintInputStore;
+}
+
+export default component$((props: BPprops) => {
   useStylesScoped$(textBoxStyles);
 
-  const bpStrStore = useStore<BlueprintInputStore>({
-    encodedInput: '',
-    decodedInput: '',
-  });
-
-  useContextProvider(BPContext, bpStrStore);
-
+  const { bpStrStore } = props;
   return (
     <>
       <span>Input factorio Blueprint</span>

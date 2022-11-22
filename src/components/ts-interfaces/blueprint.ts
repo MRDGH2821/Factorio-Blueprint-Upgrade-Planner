@@ -1,4 +1,4 @@
 export interface BlueprintInputStore {
-    encodedInput: string;
-    decodedInput: string;
-  }
+  encodedInput: string;
+  decodedInput: string;
+}
