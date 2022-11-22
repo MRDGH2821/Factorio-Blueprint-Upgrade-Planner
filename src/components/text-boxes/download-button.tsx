@@ -15,7 +15,7 @@ export default component$(() => {
         preventdefault:click
         onClick$={() => {
           const bp = generateFile(cfgCtx, bpCtx);
-          saveAs(bp, `Converted blueprint ${new Date().toUTCString}.txt`);
+          saveAs(bp, `Converted blueprint ${new Date().toUTCString()}.txt`);
         }}>
         Download!
       </button>
