@@ -32,7 +32,9 @@ export function replaceEntities(config: BluePrintConfig, blueprint: string) {
 }
 
 export function bpCompress(blueprint: string) {
-  const bpDeflateStr = deflate(blueprint);
+  const bpDeflateStr = deflate(blueprint, {
+    level: 9,
+  });
   const bpBase64Str = btoa(bpDeflateStr.toString());
   return bpBase64Str;
 }
@@ -53,7 +55,7 @@ export function BlueprintConverter(cfgCtx: ConfigInputStore, bpCtx: BlueprintInp
 }
 
 export function generateFile(cfgCtx: ConfigInputStore, bpCtx: BlueprintInputStore) {
-  const results = BlueprintConverter(cfgCtx, bpCtx);
+  const results = `0${BlueprintConverter(cfgCtx, bpCtx)}`;
 
   return new Blob(results.split(''));
 }
