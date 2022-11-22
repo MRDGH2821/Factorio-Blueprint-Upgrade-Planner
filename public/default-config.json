@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../upgrade-config-schema.json",
+  "$schema": "../upgrade-config-schema.json",
   "version": 1,
   "entities": [
     {
