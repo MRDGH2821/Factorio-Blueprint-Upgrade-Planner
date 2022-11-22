@@ -1,5 +1,6 @@
 import { component$, useContextProvider, useStore } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
+import defaultConfig from '../../public/default-config.json';
 import manifest from '../../public/manifest.json';
 import BlueprintInput from '../components/text-boxes/blueprint-input';
 import ConfigInput from '../components/text-boxes/config-input';
@@ -16,7 +17,7 @@ export default component$(() => {
   useContextProvider(BPContext, bpStrStore);
 
   const cfgStore = useStore<ConfigInputStore>({
-    config: '',
+    config: `${JSON.stringify(defaultConfig) || ''}`,
   });
   useContextProvider(configContext, cfgStore);
 
