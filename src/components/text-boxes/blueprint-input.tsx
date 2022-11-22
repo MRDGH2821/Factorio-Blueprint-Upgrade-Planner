@@ -6,11 +6,8 @@ import textBoxStyles from './text_box.css?inline';
 export function BlueprintDecrypt(bpCtx: BlueprintInputStore) {
   const bpBase64Str = bpCtx.encodedInput.slice(1);
   try {
-    const bpZlibDeflateStr = atob(bpBase64Str);
-    bpCtx.decodedInput = inflate(
-      Uint8Array.from(bpZlibDeflateStr, (c) => c.charCodeAt(0)),
-      { to: 'string' },
-    );
+    const bpZlibDeflateStr = base64ToBytes(bpBase64Str);
+    bpCtx.decodedInput = inflate(bpZlibDeflateStr, { to: 'string' });
   } catch (error) {
     bpCtx.decodedInput = `${
       error || 'An error ocurred while decrypting. Most likely it is not a base64 encoded string.'
