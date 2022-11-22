@@ -1,4 +1,5 @@
 import { component$, useContext } from '@builder.io/qwik';
+import { bytesToBase64 } from 'byte-base64';
 import { saveAs } from 'file-saver';
 import { deflate } from 'pako';
 import { BPContext, configContext } from '../../routes/stores';
@@ -24,23 +25,21 @@ export default component$(() => {
 });
 
 export function replaceEntities(config: BluePrintConfig, blueprint: string) {
-  const copy = blueprint.slice();
+  let copy = blueprint.slice();
   for (const entity of config.entities) {
-    copy.replace(new RegExp(entity.old), entity.new);
+    const regex = new RegExp(entity.old, 'g');
+    copy = copy.replace(regex, entity.new);
   }
   return copy;
 }
 
 export function bpCompress(blueprint: string) {
-  const bpDeflateStr = deflate(blueprint, {
-    level: 9,
-  });
-  const bpBase64Str = btoa(bpDeflateStr.toString());
+  const bpDeflateStrArr = deflate(blueprint, { level: 9 });
+  const bpBase64Str = bytesToBase64(bpDeflateStrArr);
   return bpBase64Str;
 }
 
 export function BlueprintConverter(cfgCtx: ConfigInputStore, bpCtx: BlueprintInputStore) {
-  console.log(cfgCtx);
   const cfgObj = JSON.parse(cfgCtx.config as string) as BluePrintConfig;
   try {
     const transformedBlueprint = replaceEntities(cfgObj, bpCtx.decodedInput);
