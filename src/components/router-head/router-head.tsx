@@ -14,7 +14,6 @@ export const RouterHead = component$(() => {
 
       <link rel="canonical" href={loc.href} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
 
       {head.meta.map((m) => (
         <meta {...m} />
