@@ -5,3 +5,8 @@ export type BluePrintConfig = {
     new: string;
   }>;
 };
+
+export interface ConfigInputStore {
+  config: string | BluePrintConfig;
+  errors?: string;
+}
