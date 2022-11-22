@@ -41,6 +41,7 @@
     "vite-tsconfig-paths": "3.5.0"
   },
   "dependencies": {
+    "byte-base64": "^1.1.0",
     "file-saver": "^2.0.5",
     "pako": "^2.1.0"
   }
