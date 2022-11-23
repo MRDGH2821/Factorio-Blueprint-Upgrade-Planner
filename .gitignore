@@ -41,3 +41,6 @@ lerna-debug.log*
 gh-pages
 
 gh-pages.pub
+
+# Cloudflare
+functions/**/*.js
