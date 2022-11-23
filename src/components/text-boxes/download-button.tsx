@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import { bytesToBase64 } from 'byte-base64';
-import { saveAs } from 'file-saver';
+import htmlFS from 'file-saver';
 import { deflate } from 'pako';
 import { BlueprintInputStore } from '../ts-interfaces/blueprint';
 import { BluePrintConfig, ConfigInputStore } from '../ts-interfaces/config';
@@ -20,7 +20,7 @@ export default component$((props: btnProps) => {
         preventdefault:click
         onClick$={() => {
           const bp = generateFile(cfgCtx, bpCtx);
-          saveAs(bp, `Converted blueprint ${new Date().toUTCString()}.txt`);
+          htmlFS.saveAs(bp, `Converted blueprint ${new Date().toUTCString()}.txt`);
         }}>
         Download!
       </button>
