@@ -1,4 +1,4 @@
-import { component$, useContextProvider, useStore } from '@builder.io/qwik';
+import { component$, useStore } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import defaultConfig from '../../public/default-config.json';
 import manifest from '../../public/manifest.json';
@@ -7,26 +7,23 @@ import ConfigInput from '../components/text-boxes/config-input';
 import DownloadButton from '../components/text-boxes/download-button';
 import { BlueprintInputStore } from '../components/ts-interfaces/blueprint';
 import { ConfigInputStore } from '../components/ts-interfaces/config';
-import { BPContext, configContext } from './stores';
 
 export default component$(() => {
   const bpStrStore = useStore<BlueprintInputStore>({
     encodedInput: '',
     decodedInput: '',
   });
-  useContextProvider(BPContext, bpStrStore);
 
   const cfgStore = useStore<ConfigInputStore>({
     config: `${JSON.stringify(defaultConfig) || ''}`,
   });
-  useContextProvider(configContext, cfgStore);
 
   return (
     <div>
       <h1>Welcome to Factorio Blueprint Upgrade Planner!</h1>
       <BlueprintInput bpStrStore={bpStrStore} />
       <ConfigInput cfgStore={cfgStore} />
-      <DownloadButton />
+      <DownloadButton BPstore={bpStrStore} CFGstore={cfgStore} />
     </div>
   );
 });
