@@ -21,7 +21,8 @@
     "preview": "qwik build preview && vite preview --open",
     "serve": "echo 'Run \"npm run qwik add\" to install a server adaptor'",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "deploy.ghpages":"npm run build && vite build -c adaptors/static/vite.config.ts && node deploy-gh-pages.cjs"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.14.0",
@@ -46,6 +47,7 @@
   "dependencies": {
     "byte-base64": "^1.1.0",
     "file-saver": "^2.0.5",
+    "gh-pages": "^4.0.0",
     "pako": "^2.1.0"
   }
 }
