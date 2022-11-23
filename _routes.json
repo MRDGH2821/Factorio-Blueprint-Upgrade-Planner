@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "include": [
+    "/Factorio-Blueprint-Upgrade-Planner/*"
+  ],
+  "exclude": [
+    "/Factorio-Blueprint-Upgrade-Planner/build/*",
+    "/Factorio-Blueprint-Upgrade-Planner/assets/*",
+    "/Factorio-Blueprint-Upgrade-Planner/*/q-data.json"
+  ]
+}
