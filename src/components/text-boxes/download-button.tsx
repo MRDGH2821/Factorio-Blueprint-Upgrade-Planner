@@ -24,6 +24,12 @@ export default component$((props: btnProps) => {
         }}>
         Download!
       </button>
+      <p>
+        <i>
+          If there are any errors, it will be in the downloaded file. And ultimately the game will
+          show errors if any.
+        </i>
+      </p>
     </>
   );
 });
