@@ -1,0 +1,3 @@
+Factorio Blueprint Upgrade Planner
+
+Use this site to quickly replace entities of one type to another with ease!
