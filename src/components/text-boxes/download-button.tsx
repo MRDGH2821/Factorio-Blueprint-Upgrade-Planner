@@ -29,7 +29,10 @@ export default component$((props: btnProps) => {
 });
 
 export function checkBlueprint(blueprint: string) {
-  return JSON.stringify(blueprint);
+  if (blueprint.includes('rror:')) {
+    throw blueprint;
+  }
+  return JSON.parse(blueprint);
 }
 
 export function replaceEntities(config: BluePrintConfig, blueprint: string) {
