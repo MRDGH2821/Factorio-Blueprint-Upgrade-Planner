@@ -24,6 +24,17 @@ export default component$((props: BPprops) => {
   useStylesScoped$(textBoxStyles);
 
   const { bpStrStore } = props;
+
+  let validity = '✅ Blueprint input received';
+
+  if (!bpStrStore.encodedInput) {
+    validity = '❌ No Blueprint found';
+  } else if (!bpStrStore.decodedInput) {
+    validity = '⚠️ Blueprint cannot be decoded, click download to see errors';
+  } else {
+    validity = '✅ Blueprint decoded, enter a config & download!';
+  }
+
   return (
     <>
       <span>Input factorio Blueprint</span>
@@ -38,6 +49,7 @@ export default component$((props: BPprops) => {
           BlueprintDecrypt(bpStrStore);
         }}
       />
+      <p>{validity}</p>
     </>
   );
 });
