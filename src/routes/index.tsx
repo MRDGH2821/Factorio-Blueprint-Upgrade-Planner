@@ -61,7 +61,52 @@ export default component$(() => {
       <ConfigInput cfgStore={cfgStore} />
       <DownloadButton BPstore={bpStrStore} CFGstore={cfgStore} />
       <br></br>
-      <h2>How to create your own config?</h2>
+      <h2>Config format</h2>
+      <p>The configuration should be in JSON format.</p>
+      <table class="commands">
+        <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>version</td>
+          <td>Number</td>
+          <td>
+            Config version. In future, configurations may have more options thus it is recommended
+            to put version else it is optional.
+          </td>
+        </tr>
+        <tr>
+          <td>entities</td>
+          <td>Array</td>
+          <td> Array of entity objects. Check below for Entity object format</td>
+        </tr>
+      </table>
+      <p>
+        <strong>Entity object format</strong>
+      </p>
+      <table class="commands">
+        <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>old</td>
+          <td>String</td>
+          <td>
+            Internal name of entity present in blueprint. This can also be a Regular expression (Do
+            not put regex flags).
+          </td>
+        </tr>
+        <tr>
+          <td>new</td>
+          <td>String</td>
+          <td> Internal name of new entity replacing old one </td>
+        </tr>
+      </table>
+      <h3>How to create your own config?</h3>
       Open Factorio's <a href="https://wiki.factorio.com/Debug_mode">Debug Mode</a> & enable{' '}
       <mark>show-debug-info-in-tooltips</mark> which will enable you to see entity's internal name.
       <p>
