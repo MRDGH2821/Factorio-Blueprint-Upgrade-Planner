@@ -9,33 +9,33 @@ import DownloadButton from '../components/text-boxes/download-button';
 import { BlueprintInputStore } from '../components/ts-interfaces/blueprint';
 import { ConfigInputStore } from '../components/ts-interfaces/config';
 
-export const code1 = `{
-  "version": 1,
-  "entities": [
+export const code1 = {
+  version: 1,
+  entities: [
     {
-      "old": "pipe",
-      "new": "se-space-pipe"
-    }
-  ]
-}`;
+      old: 'pipe',
+      new: 'se-space-pipe',
+    },
+  ],
+};
 
-export const code2 = `{
-  "version": 1,
-  "entities": [
+export const code2 = {
+  version: 1,
+  entities: [
     {
-      "old": "(?:[a-z]+-)?transport-belt",
-      "new": "se-space-transport-belt"
+      old: '(?:[a-z]+-)?transport-belt',
+      new: 'se-space-transport-belt',
     },
     {
-      "old": "(?:[a-z]+-)?underground-belt",
-      "new": "se-space-underground-belt"
+      old: '(?:[a-z]+-)?underground-belt',
+      new: 'se-space-underground-belt',
     },
     {
-      "old": "(?:[a-z]+-)?splitter",
-      "new": "se-space-splitter"
+      old: '(?:[a-z]+-)?splitter',
+      new: 'se-space-splitter',
     },
-  ]
-}`;
+  ],
+};
 
 export default component$(() => {
   const bpStrStore = useStore<BlueprintInputStore>({
