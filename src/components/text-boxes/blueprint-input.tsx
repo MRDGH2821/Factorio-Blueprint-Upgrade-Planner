@@ -5,6 +5,10 @@ import { BlueprintInputStore } from '../ts-interfaces/blueprint';
 import textBoxStyles from './text_box.css?inline';
 
 export function BlueprintDecrypt(bpCtx: BlueprintInputStore) {
+  if (bpCtx.encodedInput[0] !== '0') {
+    bpCtx.decodedInput = `${new Error('"0" not found in the beginning of blueprint string')}`;
+    return;
+  }
   const bpBase64Str = bpCtx.encodedInput.slice(1);
   try {
     const bpZlibDeflateStr = base64ToBytes(bpBase64Str);
@@ -29,8 +33,10 @@ export default component$((props: BPprops) => {
 
   if (!bpStrStore.encodedInput) {
     validity = '❌ No Blueprint found';
-  } else if (!bpStrStore.decodedInput) {
-    validity = '⚠️ Blueprint cannot be decoded, click download to see errors';
+  } else if (!bpStrStore.decodedInput || bpStrStore.decodedInput.includes('rror:')) {
+    validity = `⚠️ Blueprint cannot be decoded. ${
+      bpStrStore.decodedInput || 'Download to know more.'
+    }`;
   } else {
     validity = '✅ Blueprint decoded, enter a config & download!';
   }
