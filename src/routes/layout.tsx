@@ -8,11 +8,7 @@ export default component$(() => {
           <Slot />
         </section>
       </main>
-      <footer>
-        <a href="https://www.builder.io/" target="_blank">
-          Made with ♡ by Builder.io
-        </a>
-      </footer>
+      <footer>Made by MRDGH2821</footer>
     </>
   );
 });
