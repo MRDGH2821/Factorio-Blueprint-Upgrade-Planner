@@ -28,7 +28,12 @@ export default component$((props: btnProps) => {
   );
 });
 
+export function checkBlueprint(blueprint: string) {
+  return JSON.stringify(blueprint);
+}
+
 export function replaceEntities(config: BluePrintConfig, blueprint: string) {
+  checkBlueprint(blueprint);
   let copy = blueprint.slice();
   for (const entity of config.entities) {
     const regex = new RegExp(entity.old, 'g');
