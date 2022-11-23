@@ -1,5 +1,5 @@
 import { staticAdaptor } from '@builder.io/qwik-city/adaptors/static/vite';
-import { extendConfig } from '@builder.io/qwik-city/vite';
+import { extendConfig, qwikCity } from '@builder.io/qwik-city/vite';
 import baseConfig from '../../vite.config';
 
 export default extendConfig(baseConfig, () => {
@@ -11,8 +11,9 @@ export default extendConfig(baseConfig, () => {
       },
     },
     plugins: [
+      qwikCity({ basePathname: '/Factorio-Blueprint-Upgrade-Planner/' }),
       staticAdaptor({
-        origin: 'https://mrdgh2821.github.io/Factorio-Blueprint-Upgrade-Planner',
+        origin: 'https://mrdgh2821.github.io/Factorio-Blueprint-Upgrade-Planner/',
       }),
     ],
   };
