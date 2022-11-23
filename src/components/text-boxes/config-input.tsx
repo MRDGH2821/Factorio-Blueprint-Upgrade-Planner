@@ -10,11 +10,11 @@ export default component$((props: CFGprop) => {
   useStylesScoped$(textBoxStyles);
 
   const { cfgStore } = props;
-  let valid = 'No errors found in config';
+  let valid = '✅ No errors found in config';
   try {
     configValidator(cfgStore.config as string);
   } catch (error) {
-    valid = `${error}`;
+    valid = `⚠️ ${error}`;
   }
   return (
     <>
