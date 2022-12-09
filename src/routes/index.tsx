@@ -52,7 +52,7 @@ export default component$(() => {
       <h1>Welcome to Factorio Blueprint Upgrade Planner!</h1>
       Use this site to quickly replace entities of one type to another with ease!
       <p>
-        By default, this site uses <a href="../../public/default-config.json">a minimal config</a>{' '}
+        By default, this site uses <a href="https://github.com/MRDGH2821/Factorio-Blueprint-Upgrade-Planner/blob/main/public/default-config.json">a minimal config</a>{' '}
         which converts belts, pipes & assemblers into Space versions from Space Exploration mod.
         <br />
         Supports regex as well. Uses global flag, so no need to put any flags in regex string.
