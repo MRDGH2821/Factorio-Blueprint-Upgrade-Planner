@@ -1,1 +1,0 @@
-import{U as r,z as e,B as n}from"./q-4baa3b81.js";const t=()=>r(n,{children:[r("main",{children:r("section",{children:r(e,{})})}),r("footer",{children:"Made by MRDGH2821"})]});export{t as s_VkLNXphUh5s};

@@ -1,0 +1,1 @@
+import{U as r,z as e,B as o}from"./q-e6c54110.js";const n=()=>r(o,{children:[r("main",{children:r("section",{children:r(e,{})})}),r("footer",{children:["Made by MRDGH2821 |"," ",r("a",{href:"https://github.com/MRDGH2821/Factorio-Blueprint-Upgrade-Planner/",children:"Source Code"})]})]});export{n as s_VkLNXphUh5s};
